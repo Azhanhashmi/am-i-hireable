@@ -14,4 +14,5 @@ export const config = {
   port: process.env.PORT || 5000,
   openaiApiKey: process.env.GROQ_API_KEY as string,
   githubToken: process.env.GITHUB_TOKEN as string,
+  frontendUrl: process.env.FRONTEND_URL as string,
 };

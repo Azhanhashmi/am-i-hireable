@@ -8,7 +8,7 @@ const app = express()
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://am-i-hireable-qbpw.vercel.app/'
+    config.frontendUrl
   ],
   methods: ['GET', 'POST'],
   credentials: true
