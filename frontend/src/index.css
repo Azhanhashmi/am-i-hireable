@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+}
+html { scroll-behavior: smooth; }
+/* Cards become clickable/hoverable */
+.brutal-card,
+.brutal-card-cream,
+.brutal-card-punch,
+.brutal-card-gold,
+.brutal-card-ink {
+  transition: box-shadow 0.1s, transform 0.1s;
+}
+
+.brutal-card:hover,
+.brutal-card-cream:hover,
+.brutal-card-gold:hover,
+.brutal-card-ink:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #111111;
+}
+
+.brutal-card:active,
+.brutal-card-cream:active,
+.brutal-card-gold:active,
+.brutal-card-ink:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #111111;
+}
+
+body {
+  background-color: #fdf6e3;
+  color: #111111;
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* subtle grid background like the reference site */
+  background-image:
+    linear-gradient(rgba(17,17,17,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fdf6e3; }
+::-webkit-scrollbar-thumb { background: #111; border-radius: 0; }
+
+/* Brutalist card base */
+.brutal-card {
+  background: #ffffff;
+  border: 2.5px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-card-cream {
+  background: #fdf6e3;
+  border: 2.5px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-card-punch {
+  background: #e91e8c;
+  border: 2.5px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-card-gold {
+  background: #f5c518;
+  border: 2.5px solid #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.brutal-card-ink {
+  background: #111111;
+  border: 2.5px solid #111111;
+  box-shadow: 6px 6px 0px #333333;
+}
+
+/* Brutalist input */
+.brutal-input {
+  background: #ffffff;
+  border: 2.5px solid #111111;
+  box-shadow: 4px 4px 0px #111111;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  outline: none;
+  transition: box-shadow 0.1s, transform 0.1s;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #111;
+}
+.brutal-input:focus {
+  box-shadow: 6px 6px 0px #e91e8c;
+  transform: translate(-1px, -1px);
+}
+.brutal-input::placeholder { color: #999; font-weight: 400; }
+
+/* Brutalist button */
+.brutal-btn {
+  border: 2.5px solid #111111;
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow 0.1s, transform 0.1s;
+  font-family: 'Space Grotesk', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+}
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #111 !important;
+}
+
+.btn-punch {
+  background: #e91e8c;
+  color: #fff;
+  box-shadow: 6px 6px 0px #111111;
+}
+.btn-ink {
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 6px 6px 0px #e91e8c;
+}
+.btn-gold {
+  background: #f5c518;
+  color: #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+.btn-sky {
+  background: #00b4d8;
+  color: #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+.btn-white {
+  background: #ffffff;
+  color: #111111;
+  box-shadow: 6px 6px 0px #111111;
+}
+
+/* Tag / Badge */
+.brutal-tag {
+  border: 2px solid #111;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  display: inline-block;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Progress bar */
+.bar-track {
+  background: #e5e5e5;
+  border: 2px solid #111;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.bar-fill-el {
+  height: 100%;
+  transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+  background: #e91e8c;
+  border-right: 2px solid #111;
+}
+
+/* Score ring */
+.score-ring-circle {
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Section divider */
+.section-divider {
+  height: 4px;
+  background: #111;
+  margin: 32px 0;
+}
+.brutal-card:hover {
+  transform: translate(-4px, -4px);   /* was -2px -2px */
+  box-shadow: 10px 10px 0px #111111;  /* was 8px 8px */
+}
+
+.brutal-card:active {
+  transform: translate(3px, 3px);     /* was 2px 2px */
+  box-shadow: 2px 2px 0px #111111;
+}
+.brutal-btn:hover {
+  transform: translate(-4px, -4px);   /* was -2px -2px */
+  box-shadow: 10px 10px 0px #111111;
+}
