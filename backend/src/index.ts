@@ -5,7 +5,14 @@ import analyzeRouter from './routes/analyze';
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://am-i-hireable-qbpw.vercel.app/'
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true
+}))
 app.use(express.json())
 app.get("/health",(req,res)=>{
     res.status(200).json({status:"ok"})
