@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { AnalysisResult, GitHubRepoDetail } from '../types';
 
 import ScoreRing from './ScoreRing';
@@ -46,7 +46,6 @@ const getLangColor = (lang: string, idx: number) => LANG_COLORS[lang] || DEFAULT
 // Role detection based on languages + signals
 const detectRole = (signals: AnalysisResult['githubSignals']): { role: string; secondary: string; confidence: number; reason: string } => {
   const langs = signals.languages.map(l => l.toLowerCase());
-  const lc    = signals.languageCount || {};
 
   const hasPython  = langs.includes('python');
   const hasJS      = langs.includes('javascript');

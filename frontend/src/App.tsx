@@ -24,10 +24,10 @@ function App() {
       if (data.mode === 'product') payload.tier = data.tier;
 
       const response = await axios.post<AnalysisResult>(
-        'http://localhost:5000/api/analyze',
-        payload,
-        { timeout: 90000 }
-      );
+  `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/analyze`,
+  payload,
+  { timeout: 90000 }
+);
       setResult(response.data);
       setAppState('results');
     } catch (err) {
