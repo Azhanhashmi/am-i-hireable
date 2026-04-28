@@ -37,7 +37,7 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, error }) => {
             <span>BETA VERSION</span>
           </div>
         </div>
-      <a href="https://github.com/azhanhashmi"
+      <a href="https://github.com/azhanhashmi/am-i-hireable"
   target="_blank"
   rel="noopener noreferrer"
   className="brutal-card px-4 py-1.5 bg-sky font-bold text-sm"
