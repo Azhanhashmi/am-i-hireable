@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://am-i-hireable.vercel.app/sitemap.xml
